@@ -29,6 +29,7 @@ public abstract class ServerImpl<T extends ClientImpl> implements Server{
         this.port = port;
         this.serverSocket = new ServerSocket(port);
 
+
         this.clientRegisterThread = new Thread(getClientRegistration());
         this.clientRegisterThread.setDaemon(true);
         this.clientRegisterThread.setName("Server | Client register thread");
