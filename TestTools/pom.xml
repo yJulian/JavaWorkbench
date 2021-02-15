@@ -21,5 +21,12 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <repository>
+            <id>local-repository</id>
+            <url>http://server:8080/releases</url>
+        </repository>
+    </distributionManagement>
+
 
 </project>
