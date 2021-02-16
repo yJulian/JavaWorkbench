@@ -1,4 +1,4 @@
-package de.yjulian.tt;
+package de.yjulian.tt.pair;
 
 import java.util.Objects;
 
