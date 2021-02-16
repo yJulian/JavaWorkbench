@@ -1,5 +1,7 @@
 package de.yjulian.tt;
 
+import java.util.Objects;
+
 public class Pair<T, G> {
 
     protected final T first;
@@ -17,4 +19,17 @@ public class Pair<T, G> {
     public G getSecond() {
         return second;
     }
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Pair<?, ?> pair = (Pair<?, ?>) object;
+        return Objects.equals(first, pair.first) && Objects.equals(second, pair.second);
+    }
+
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), first, second);
+    }
+
 }
