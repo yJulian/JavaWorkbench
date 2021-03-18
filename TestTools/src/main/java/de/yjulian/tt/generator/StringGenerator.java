@@ -2,16 +2,16 @@ package de.yjulian.tt.generator;
 
 public class StringGenerator {
 
-    private final String template;
+    private final String format;
     private Replacer replacer;
     private int iterations;
 
-    public StringGenerator(String template) {
-        this.template = template;
+    public StringGenerator(String format) {
+        this.format = format;
     }
 
-    public StringGenerator(String template, Replacer replacer) {
-        this.template = template;
+    public StringGenerator(String format, Replacer replacer) {
+        this.format = format;
         this.replacer = replacer;
     }
 
@@ -35,7 +35,7 @@ public class StringGenerator {
             if (builder.length() > 0) {
                 builder.append(System.lineSeparator());
             }
-            builder.append(String.format(template, replacer.replaceWith(i)));
+            builder.append(String.format(format, replacer.replaceWith(i)));
         }
 
         return builder.toString();
